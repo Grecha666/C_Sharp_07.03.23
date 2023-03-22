@@ -68,14 +68,13 @@ Console.WriteLine(result);
 Console.WriteLine("Напишите число ");
 int число = Convert.ToInt32(Console.ReadLine()); 
 
-
 while (число > 999)
 {
     int результат_деления = число /= 10;
-    int третяя_цифра = (результат_деления % 10);
-    Console.WriteLine(третяя_цифра);
-  
 }
+
+    int третяя_цифра = (число % 10);
+    Console.WriteLine(третяя_цифра);
 
 if (число >= 100 && число < 1000)
 {

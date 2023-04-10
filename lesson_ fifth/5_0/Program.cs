@@ -1,6 +1,8 @@
 ﻿//Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9,9]. Найдите сумму отрицательных и положительных элементов массива
 
-void Print(int[] arr)
+// Решение задачи состоит из двух функций: заполняющей и выводящей
+
+void Print(int[] arr)  //выводящая функция
 {
     int size = arr.Length;
     for (int i = 0; i < size; i++)
@@ -8,7 +10,7 @@ void Print(int[] arr)
     Console.WriteLine();    
 }
 
-int[] EightMass(int size, int from, int to)
+int[] NewMass(int size, int from, int to)  //заполняющая функция
 {
     int[] arr = new int[size];
 
@@ -36,7 +38,7 @@ int num = int.Parse(Console.ReadLine()!);
 int start = int.Parse(Console.ReadLine()!);
 int stop = int.Parse(Console.ReadLine()!);
 
-int[] mass = EightMass(num, start, stop);
-Print(mass);
+int[] mass = NewMass(num, start, stop); //возвращаем одномерный массив
+Print(mass); //выводим одномерный массив
 SumPosNeg(mass);
 

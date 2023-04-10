@@ -31,7 +31,9 @@ void MyFunction(int[] arr)
 }
 
 int[] array = MakeArray(count, a, b);
+Console.Write("Ваш массив: ");
 PrintArray(array);
 Console.WriteLine();
+Console.Write("Ваш массив с противоположными знаками: ");
 MyFunction(array);
 PrintArray(array);

@@ -17,7 +17,7 @@ void Print(int[] arr)  //выводящая функция
         Console.Write($"{arr[i]} ");
      
 }
-*/
+
 int[] NewMass(int size, int from, int to)  //заполняющая функция
 {
     int[] arr = new int[size];

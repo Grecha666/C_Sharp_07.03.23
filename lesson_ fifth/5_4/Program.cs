@@ -43,9 +43,9 @@ int[] MyltiplyPairs(int[] array)
     {
         pairs[i] = array[i] * array[arrLength - i - 1];
     }
-    if (arrLength%2 == 1)
+    if (arrLength %2 == 1)
     {
-        pairs[pairs.Length - 1] = array[arrLength - 1];
+        pairs[pairs.Length - 1] = array[arrLength/2];
     }
     return pairs;
 }

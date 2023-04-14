@@ -85,7 +85,7 @@ Console.Write($"Cумма элементов, стоящих на нечётны
 
 //Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива
 
-void Print(int[] arr)  //выводящая функция
+void Print(double[] arr)  //выводящая функция
 {
     int size = arr.Length;
     for (int i = 0; i < size; i++)
@@ -93,13 +93,30 @@ void Print(int[] arr)  //выводящая функция
      
 }
 
-int[] NewMass(int size, int from, int to)  //заполняющая функция
+double[] NewMass(int size, int from, int to)  //заполняющая функция
 {
-    int[] arr = new int[size];
+    double[] arr = new double[size];
+    Random n_new = new Random();
 
     for (int i = 0; i < size; i++)
-        arr[i] = new Random().Next(from, to + 1);
+        arr[i] = Math.Round(n_new.NextDouble() *(to - from) + from, 2);
         return arr;
+}
+
+void DiffMaxNin(double[] arr)
+{
+    double n_maх = arr[0];
+    double n_min = arr[0];
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+     if(n_maх < arr[i])
+        n_maх = arr[i];
+     else if(n_min > arr[i])
+        n_min = arr[i];
+    }
+    Console.Write($"Maх = {n_maх}, Min = {n_min}. ");
+    Console.Write($"Difference: {n_maх} - ({n_min}) = {Math.Round(n_maх - n_min, 2)}");
 }
 
 Console.WriteLine("Напишите размер нового массива: ");
@@ -111,8 +128,9 @@ int start = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Напишите конец диапазона массива: ");
 int stop = int.Parse(Console.ReadLine()!);
 
-int[] mass = NewMass(num, start, stop); //возвращаем одномерный массив, 'сложили в коробочку информацию о массиве'
+double[] mass = NewMass(num, start, stop); //возвращаем одномерный массив, 'сложили в коробочку информацию о массиве'
 Console.Write("Новый массив: ");   
 Print(mass); 
 Console.WriteLine();
+DiffMaxNin(mass);
 
